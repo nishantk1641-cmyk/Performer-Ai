@@ -1,0 +1,567 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PERFORMER AI | UGC Creative Agency</title>
+<meta name="description" content="Performer AI creates powerful UGC advertisements, AI video ads and creative campaigns. Founded by Nishant.">
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --black:#090909;
+  --white:#fff;
+  --gray:#999;
+  --line:#252525;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ background:var(--black);
+ color:var(--white);
+ font-family:'DM Sans',sans-serif;
+ overflow-x:hidden;
+}
+a{text-decoration:none;color:inherit}
+button{font:inherit}
+.container{width:88%;max-width:1250px;margin:auto}
+
+/* NAVBAR */
+nav{
+ height:85px;
+ display:flex;
+ justify-content:space-between;
+ align-items:center;
+ border-bottom:1px solid var(--line);
+ position:sticky;
+ top:0;
+ background:rgba(9,9,9,.94);
+ backdrop-filter:blur(15px);
+ z-index:100;
+ padding:0 6%;
+}
+.logo{
+ font-family:'Space Grotesk';
+ font-size:22px;
+ font-weight:700;
+ letter-spacing:-1px;
+}
+.logo span{color:#999}
+.navlinks{display:flex;gap:35px;align-items:center}
+.navlinks a{font-size:13px;color:#aaa;transition:.3s}
+.navlinks a:hover{color:white}
+.nav-cta{
+ background:white;color:black!important;
+ padding:13px 22px;border-radius:3px;
+ font-weight:700;
+}
+.menu{display:none;background:none;color:white;border:0;font-size:25px}
+
+/* HERO */
+.hero{
+ min-height:730px;
+ display:flex;
+ flex-direction:column;
+ justify-content:center;
+ padding:100px 0 80px;
+ position:relative;
+}
+.eyebrow{
+ font-size:11px;letter-spacing:4px;
+ color:#aaa;text-transform:uppercase;
+ display:flex;align-items:center;gap:12px;
+ margin-bottom:35px;
+}
+.eyebrow:before{
+ content:'';width:35px;height:1px;background:white;
+}
+.hero h1{
+ font-family:'Space Grotesk';
+ font-size:clamp(65px,11vw,145px);
+ line-height:.91;
+ letter-spacing:-9px;
+ font-weight:700;
+ max-width:1100px;
+}
+.hero h1 .outline{
+ color:transparent;
+ -webkit-text-stroke:1px white;
+}
+.hero-bottom{
+ display:flex;justify-content:space-between;
+ align-items:end;margin-top:65px;
+}
+.hero-bottom p{
+ color:#999;max-width:390px;
+ line-height:1.8;font-size:14px;
+}
+.primary-btn{
+ display:inline-flex;align-items:center;gap:30px;
+ background:white;color:black;
+ padding:17px 24px;font-size:12px;
+ font-weight:700;transition:.3s;
+}
+.primary-btn:hover{background:#ccc;transform:translateY(-4px)}
+.hero-number{
+ position:absolute;right:6%;top:45%;
+ font-size:11px;color:#666;letter-spacing:2px;
+}
+
+/* MARQUEE */
+.marquee{
+ overflow:hidden;border-top:1px solid var(--line);
+ border-bottom:1px solid var(--line);
+ padding:23px 0;
+ white-space:nowrap;
+}
+.marquee-track{
+ display:inline-flex;gap:55px;
+ animation:move 25s linear infinite;
+ font-family:'Space Grotesk';
+ font-size:16px;font-weight:600;
+ letter-spacing:3px;
+}
+.marquee span{color:#777}
+@keyframes move{to{transform:translateX(-50%)}}
+
+/* SECTIONS */
+section{padding:115px 0}
+.section-label{
+ font-size:11px;letter-spacing:3px;color:#888;
+ text-transform:uppercase;margin-bottom:25px;
+}
+.section-title{
+ font-family:'Space Grotesk';
+ font-size:clamp(40px,6vw,76px);
+ letter-spacing:-4px;line-height:1.05;
+}
+.section-desc{
+ color:#888;line-height:1.8;
+ font-size:14px;max-width:440px;
+ margin-top:22px;
+}
+
+/* WORK */
+.work-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:55px 25px;margin-top:65px;
+}
+.work-card{cursor:pointer}
+.work-image{
+ width:100%;aspect-ratio:1.3;
+ overflow:hidden;background:#181818;
+ position:relative;
+}
+.work-image img{
+ width:100%;height:100%;object-fit:cover;
+ transition:transform .7s;
+ filter:grayscale(100%);
+}
+.work-card:hover img{transform:scale(1.06)}
+.work-tag{
+ position:absolute;left:18px;bottom:18px;
+ background:white;color:black;
+ font-size:10px;padding:9px 13px;
+ letter-spacing:1px;
+}
+.work-info{
+ display:flex;justify-content:space-between;
+ align-items:center;padding-top:20px;
+}
+.work-info h3{font-size:19px;font-weight:600}
+.work-info span{font-size:12px;color:#888}
+
+/* SERVICES */
+.services{background:#f4f4f1;color:#090909}
+.services .section-label{color:#777}
+.services .section-desc{color:#666}
+.service-list{margin-top:60px;border-top:1px solid #ccc}
+.service{
+ display:grid;grid-template-columns:70px 1fr 60px;
+ align-items:center;gap:20px;
+ padding:30px 0;border-bottom:1px solid #ccc;
+ transition:.3s;
+}
+.service:hover{padding-left:15px}
+.service small{color:#777;font-size:12px}
+.service h3{
+ font-family:'Space Grotesk';
+ font-size:clamp(22px,3vw,34px);
+ letter-spacing:-1px;
+}
+.service p{color:#777;font-size:12px;margin-top:7px}
+.service .arrow{font-size:25px;text-align:right}
+
+/* ABOUT */
+.about-grid{
+ display:grid;grid-template-columns:1fr 1fr;
+ gap:70px;align-items:center;margin-top:50px;
+}
+.about-visual{
+ min-height:450px;background:#161616;
+ display:flex;align-items:center;
+ justify-content:center;position:relative;
+ overflow:hidden;
+}
+.about-visual .big-text{
+ font-family:'Space Grotesk';
+ font-size:100px;font-weight:700;
+ letter-spacing:-9px;
+ transform:rotate(-90deg);
+ white-space:nowrap;
+}
+.about-visual .corner{
+ position:absolute;bottom:25px;left:25px;
+ font-size:11px;letter-spacing:3px;color:#888;
+}
+.about-content h3{
+ font-family:'Space Grotesk';
+ font-size:45px;letter-spacing:-2px;
+ line-height:1.1;
+}
+.about-content p{
+ margin-top:25px;color:#999;
+ line-height:1.9;font-size:14px;
+}
+.founder{
+ margin-top:35px;padding-top:25px;
+ border-top:1px solid var(--line);
+}
+.founder strong{font-size:20px}
+.founder span{
+ display:block;margin-top:7px;
+ font-size:11px;letter-spacing:2px;color:#888;
+}
+
+/* PROCESS */
+.process-grid{
+ display:grid;grid-template-columns:repeat(3,1fr);
+ margin-top:60px;border-top:1px solid var(--line);
+}
+.process{
+ padding:30px 25px 30px 0;
+ border-bottom:1px solid var(--line);
+}
+.process small{color:#777;font-size:12px}
+.process h3{
+ font-family:'Space Grotesk';
+ font-size:25px;margin-top:35px;
+}
+.process p{
+ font-size:13px;line-height:1.8;
+ color:#888;margin-top:15px;
+}
+
+/* CONTACT */
+.contact{
+ background:#f4f4f1;color:#090909;
+ text-align:center;padding:130px 0;
+}
+.contact .section-label{color:#777}
+.contact h2{
+ font-family:'Space Grotesk';
+ font-size:clamp(55px,10vw,120px);
+ letter-spacing:-8px;line-height:.95;
+}
+.contact p{
+ color:#777;margin:25px auto 35px;
+ font-size:14px;max-width:420px;line-height:1.8;
+}
+.contact .primary-btn{background:#090909;color:white}
+.contact .primary-btn:hover{background:#333}
+
+/* FOOTER */
+footer{padding:40px 6%}
+.footer-top{
+ display:flex;justify-content:space-between;
+ align-items:center;gap:20px;
+}
+.footer-links{display:flex;gap:22px}
+.footer-links a{font-size:12px;color:#888}
+.footer-bottom{
+ border-top:1px solid var(--line);
+ margin-top:35px;padding-top:25px;
+ display:flex;justify-content:space-between;
+ color:#666;font-size:11px;
+}
+
+/* ANIMATION */
+.reveal{
+ opacity:0;transform:translateY(35px);
+ transition:opacity .8s,transform .8s;
+}
+.reveal.show{opacity:1;transform:translateY(0)}
+
+@media(max-width:750px){
+ nav{height:70px}
+ .menu{display:block}
+ .navlinks{
+  display:none;position:absolute;top:70px;
+  left:0;width:100%;background:#090909;
+  padding:30px 6%;flex-direction:column;
+  align-items:flex-start;border-bottom:1px solid #333;
+ }
+ .navlinks.active{display:flex}
+ .hero{min-height:650px}
+ .hero h1{letter-spacing:-5px}
+ .hero-bottom{align-items:flex-start;flex-direction:column;gap:30px}
+ .hero-number{display:none}
+ section{padding:85px 0}
+ .work-grid{grid-template-columns:1fr;gap:35px}
+ .about-grid{grid-template-columns:1fr;gap:35px}
+ .about-visual{min-height:330px}
+ .about-visual .big-text{font-size:75px}
+ .process-grid{grid-template-columns:1fr}
+ .contact h2{letter-spacing:-4px}
+ .footer-top,.footer-bottom{flex-direction:column;align-items:flex-start}
+ .footer-links{flex-wrap:wrap;margin-top:20px}
+ .service{grid-template-columns:40px 1fr 25px}
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+ <a href="#" class="logo">PERFORMER<span>®</span> AI.</a>
+ <button class="menu" onclick="toggleMenu()">☰</button>
+ <div class="navlinks" id="navlinks">
+  <a href="#work" onclick="closeMenu()">WORK</a>
+  <a href="#services" onclick="closeMenu()">SERVICES</a>
+  <a href="#about" onclick="closeMenu()">ABOUT</a>
+  <a href="#contact" class="nav-cta" onclick="closeMenu()">LET'S TALK ↗</a>
+ </div>
+</nav>
+
+<main>
+<div class="container">
+ <header class="hero">
+  <div class="eyebrow">Independent Creative Advertising Agency</div>
+  <h1>
+   WE MAKE<br>
+   <span class="outline">ADS THAT</span><br>
+   PERFORM.
+  </h1>
+  <div class="hero-number">INDIA — GLOBAL</div>
+  <div class="hero-bottom">
+   <p>
+    We turn attention into action through powerful UGC,
+    AI-powered video advertisements and creative storytelling.
+    Made to stop the scroll.
+   </p>
+   <a href="#work" class="primary-btn">EXPLORE OUR WORK ↗</a>
+  </div>
+ </header>
+</div>
+
+<div class="marquee">
+ <div class="marquee-track">
+  <span>UGC ADS ✳</span> CREATIVE STRATEGY ✳
+  AI VIDEO ADS ✳ PERFORMANCE CREATIVE ✳
+  BRAND STORYTELLING ✳ UGC ADS ✳
+  CREATIVE STRATEGY ✳ AI VIDEO ADS ✳
+  PERFORMANCE CREATIVE ✳ BRAND STORYTELLING ✳
+ </div>
+</div>
+
+<section id="work">
+ <div class="container">
+  <div class="reveal">
+   <div class="section-label">01 / Selected work</div>
+   <h2 class="section-title">CREATIVITY<br>IN ACTION.</h2>
+   <p class="section-desc">
+    Creative concepts built to capture attention,
+    communicate value and make brands memorable.
+   </p>
+  </div>
+
+  <div class="work-grid">
+   <article class="work-card reveal">
+    <div class="work-image">
+     <img src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=900" alt="Skincare product advertising">
+     <span class="work-tag">BEAUTY / UGC</span>
+    </div>
+    <div class="work-info">
+     <h3>Beauty & Skincare</h3><span>01 / CONCEPT</span>
+    </div>
+   </article>
+
+   <article class="work-card reveal">
+    <div class="work-image">
+     <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=900" alt="Watch product advertising">
+     <span class="work-tag">LIFESTYLE / ADS</span>
+    </div>
+    <div class="work-info">
+     <h3>Luxury Lifestyle</h3><span>02 / CONCEPT</span>
+    </div>
+   </article>
+
+   <article class="work-card reveal">
+    <div class="work-image">
+     <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=900" alt="Sneaker advertising">
+     <span class="work-tag">FASHION / UGC</span>
+    </div>
+    <div class="work-info">
+     <h3>Fashion & Footwear</h3><span>03 / CONCEPT</span>
+    </div>
+   </article>
+
+   <article class="work-card reveal">
+    <div class="work-image">
+     <img src="https://images.unsplash.com/photo-1541643600914-78b084683601?w=900" alt="Perfume advertising">
+     <span class="work-tag">PRODUCT / AI ADS</span>
+    </div>
+    <div class="work-info">
+     <h3>Perfume & Fragrance</h3><span>04 / CONCEPT</span>
+    </div>
+   </article>
+  </div>
+  <p style="color:#777;font-size:11px;margin-top:35px">
+   * These are visual concept showcases. Replace them with your actual client campaigns as you create them.
+  </p>
+ </div>
+</section>
+
+<section class="services" id="services">
+ <div class="container">
+  <div class="section-label">02 / What we do</div>
+  <h2 class="section-title">OUR CREATIVE<br>CAPABILITIES.</h2>
+  <p class="section-desc">
+   From the first idea to the final advertisement,
+   we create content designed for modern brands.
+  </p>
+
+  <div class="service-list">
+   <div class="service">
+    <small>01</small>
+    <div><h3>UGC Video Ads</h3><p>Authentic creator-style advertising concepts.</p></div>
+    <div class="arrow">↗</div>
+   </div>
+   <div class="service">
+    <small>02</small>
+    <div><h3>AI Video Advertising</h3><p>AI-powered product visuals and video creatives.</p></div>
+    <div class="arrow">↗</div>
+   </div>
+   <div class="service">
+    <small>03</small>
+    <div><h3>Product Commercials</h3><p>Premium product-focused visual storytelling.</p></div>
+    <div class="arrow">↗</div>
+   </div>
+   <div class="service">
+    <small>04</small>
+    <div><h3>Social Media Creatives</h3><p>Creative assets for digital brand campaigns.</p></div>
+    <div class="arrow">↗</div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section id="about">
+ <div class="container">
+  <div class="section-label">03 / The people behind it</div>
+  <div class="about-grid">
+   <div class="about-visual reveal">
+    <div class="big-text">PERFORMER</div>
+    <div class="corner">BUILT FOR THE NEXT GENERATION.</div>
+   </div>
+   <div class="about-content reveal">
+    <h3>SMALL TEAM.<br>BIG CREATIVE<br>ENERGY.</h3>
+    <p>
+     Performer AI is an independent creative advertising
+     agency focused on the future of digital advertising.
+     We combine creative thinking, AI tools and modern
+     storytelling to help brands stand out.
+    </p>
+    <p>
+     Our goal is simple: create advertisements that
+     people actually want to watch.
+    </p>
+    <div class="founder">
+     <strong>Nishant</strong>
+     <span>FOUNDER & CREATIVE LEAD — PERFORMER AI</span>
+    </div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section>
+ <div class="container">
+  <div class="section-label">04 / How we work</div>
+  <h2 class="section-title">SIMPLE PROCESS.<br>STRONG CREATIVE.</h2>
+
+  <div class="process-grid">
+   <div class="process reveal">
+    <small>STEP 01 / DISCOVER</small>
+    <h3>Understand</h3>
+    <p>We learn about your product, audience and advertising goals.</p>
+   </div>
+   <div class="process reveal">
+    <small>STEP 02 / CREATE</small>
+    <h3>Produce</h3>
+    <p>We develop concepts, scripts and engaging ad creatives.</p>
+   </div>
+   <div class="process reveal">
+    <small>STEP 03 / DELIVER</small>
+    <h3>Launch</h3>
+    <p>We deliver polished creative assets ready for your campaigns.</p>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="container">
+  <div class="section-label">05 / Start something great</div>
+  <h2>LET'S MAKE<br>IT PERFORM.</h2>
+  <p>
+   Have a product or brand that deserves attention?
+   Let's create something people remember.
+  </p>
+  <a class="primary-btn" href="mailto:nishantb1641@gmail.com?subject=Project%20Inquiry%20-%20Performer%20AI">
+   START A PROJECT ↗
+  </a>
+ </div>
+</section>
+</main>
+
+<footer>
+ <div class="footer-top">
+  <a href="#" class="logo">PERFORMER<span>®</span> AI.</a>
+  <div class="footer-links">
+   <a href="#work">WORK</a>
+   <a href="#services">SERVICES</a>
+   <a href="#about">ABOUT</a>
+   <a href="#contact">CONTACT</a>
+  </div>
+ </div>
+ <div class="footer-bottom">
+  <span>© 2026 PERFORMER AI. ALL RIGHTS RESERVED.</span>
+  <span>CREATED WITH INTENTION BY NISHANT.</span>
+ </div>
+</footer>
+
+<script>
+function toggleMenu(){
+ document.getElementById('navlinks').classList.toggle('active');
+}
+function closeMenu(){
+ document.getElementById('navlinks').classList.remove('active');
+}
+
+const observer = new IntersectionObserver(entries=>{
+ entries.forEach(entry=>{
+  if(entry.isIntersecting){
+   entry.target.classList.add('show');
+   observer.unobserve(entry.target);
+  }
+ });
+},{threshold:0.12});
+
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+</script>
+
+</body>
+</html>
